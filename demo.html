@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Restore Form</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="https://www.santafe.gob.ar/assets/standard/images/favicon.ico">
+    <link rel="stylesheet" href="/restore-form/src/css/custom-materialize.css?version=012021">
+
+    <!-- assets fonts -->
+    <link rel="stylesheet" href="https://www.santafe.gob.ar/assets/standard/css/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" />
+    <link rel="stylesheet" href="//www.santafe.gob.ar/assets/jquery-ui/jquery-ui-1.10.3/css/gobierno/jquery-ui-1.10.3.custom.css" type="text/css" />
+    <link rel="stylesheet" href="/restore-form/src/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="/restore-form/dist/css/jquery.restore-form.css" type="text/css" />
+</head>
+
+<body>
+    <main role="main" class="container">
+
+        <!-- Core -->
+        <div class="card-panel">
+            <h4 class="title">Restaurado de Valores Originales de un Formulario</h4>
+            <form method="POST" id="formulario" name="formulario">
+                <div class="row">
+                    <div class="col s6">
+                        <label for="lista">Lista</label>
+                        <select id="lista" name="lista" class="restore">
+                            <option value=""></option>
+                            <option selected value="1">ALFA</option>
+                            <option value="2">BETA</option>
+                            <option value="3">GAMMA</option>
+                        </select>
+                    </div>
+
+                    <div class="col s6">
+                        <label for="lista-multiple">Lista Multiple</label>
+                        <select id="lista-multiple" name="lista-multiple" multiple class="restore">
+                            <option value=""></option>
+                            <option selected value="1">ALFA</option>
+                            <option value="2">BETA</option>
+                            <option selected value="3">GAMMA</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s6">
+                        <label for="texto">Texto (<b>con</b>) <i>restoreform</i></label>
+                        <input type="text" id="texto" name="texto" class="restore"
+                            value="Il usate esser linguage pan." />
+                    </div>
+
+                    <div class="col s6">
+                        <label for="texto2">Texto (<b>sin</b> <i>restoreform</i>)</label>
+                        <input type="text" id="texto2" name="texto2" value="Questiones paternoster pro al." />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s6">
+                        <input type="radio" id="radio_alfa" checked="checked" name="radio" value="alfa" class="restore">
+                        <label for="radio_alfa">Alfa Radio</label><br>
+
+                        <input type="radio" id="radio_beta" name="radio" value="beta" class="restore">
+                        <label for="radio_beta">Beta Radio</label><br>
+
+                        <input type="radio" id="radio_gamma" name="radio" value="gamma" class="restore">
+                        <label for="radio_gamma">Gamma Radio</label><br>
+                    </div>
+
+                    <div class="col s6">
+                        <input type="checkbox" id="check_alfa" name="check_alfa" value="alfa" class="restore">
+                        <label for="check_alfa">Alfa Checkbox</label><br>
+
+                        <input type="checkbox" id="check_beta" name="check_beta" value="beta" class="restore">
+                        <label for="check_beta">Beta Checkbox</label><br>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s6">
+                        <label for="textoarea">Textarea</label>
+                        <textarea id="textoarea" rows="5" name="textarea"
+                            class="restore">Sia il lista responder concretisation. Patre europa grammatica uso da. Questiones paternoster pro al. </textarea>
+                    </div>
+                </div>
+
+                <h5>Elementos HTML5</h5>
+                <div class="row">
+                    <div class="col s4">
+                        <label for="type-number">Número (number)</label>
+                        <input id="type-number" type="number" name="type-number" min="0" max="20" value="10" class="restore">
+                    </div>
+
+                    <div class="col s4">
+                        <label for="type-search">Buscador (search)</label>
+                        <input id="type-search" type="search" name="type-search" value="jQuery Plugin" class="restore">
+                    </div>
+
+                    <div class="col s4">
+                        <label for="type-tel">Teléfono (tel)</label>
+                        <input id="type-tel" type="tel" name="type-tel" value="+54 342 4506726" class="restore">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s6">
+                        <label for="type-url">URL (url)</label>
+                        <input id="type-url" type="url" name="type-url" value="https://www.santafe.gob.ar" class="restore">
+                    </div>
+
+                    <div class="col s6">
+                        <label for="type-email">E-mail (email)</label>
+                        <input id="type-email" type="email" name="type-email" value="eseval@santafe.gov.ar" class="restore">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s4">
+                        <label for="type-date">Fecha (date)</label>
+                        <input id="type-date" type="date" name="type-date" value="2022-10-13" class="restore">
+                    </div>
+
+                    <div class="col s4">
+                        <label for="type-time">Hora (time)</label>
+                        <input id="type-time" type="time" name="type-time" value="10:00" class="restore">
+                    </div>
+
+                    <div class="col s4">
+                        <label for="type-datetime-local">Fecha y Hora Local (datetime-local)</label>
+                        <input id="type-datetime-local" type="datetime-local" name="type-datetime-local" value="2022-10-13T10:00" class="restore">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s3">
+                        <label for="type-month">Mes (month)</label><br />
+                        <input id="type-month" type="month" name="type-month" value="2022-10" class="restore">
+                    </div>
+
+                    <div class="col s3">
+                        <label for="type-week">Semana (week)</label><br />
+                        <input id="type-week" type="week" name="type-week" value="2022-W41" class="restore">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s4">
+                        <label for="type-range">Rango (range)</label>
+                        <input id="type-range" type="range" name="type-range" min="0" max="100" value="25" class="restore">
+                    </div>
+
+                    <div class="col s4">
+                        <label for="type-color">Color (color)</label><br />
+                        <input id="type-color" type="color" name="type-color" value="#ff0000" class="restore">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s6">
+                        <button id="comprobar" type="button"
+                            class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+                            <span class="ui-button-text">Comprobar Cambios</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+        <!-- Javascript de Async Modal -->
+        <script src="/restore-form/dist/js/jquery.restore-form.min.js"></script>
+        <script src="/restore-form/src/js/base.js"></script>
+        <script src="/restore-form/src/js/app.js"></script>
+        <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    </main>
+    <div class="clearfix"><br></div>
+
+    <footer class="page-footer footer text-muted">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 col m8">&nbsp;</div>
+
+                <div class="col s12 col m4">
+                    <div class="sociales marca">
+                        <p>eseval@santafe.gov.ar</p>
+                        <p>
+                            <span class="cc">c</span>
+                            Atribución-CompartirIgual 2.5 Argentina
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
