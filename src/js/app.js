@@ -5,9 +5,9 @@
  */
 
 /**
- * Restaurar el valor original de la Lista Materialize
- * @param {type} campo
- * @returns {void}
+ * Restaurar el valor original de la Lista Materialize Esta función es referida 
+ * por el método {@link jQuery.fn.restoreform.restore restore} del Plugin. 
+ * @param {HTMLElement} campo
  */
 function restore_lista(campo) {
     $(`#${campo.id}`).val($(`#${campo.id}`).attr("data-original-value"));
@@ -15,9 +15,9 @@ function restore_lista(campo) {
 }
 
 /**
- * Restaurar el valor original de la Lista Multiple Materialize
- * @param {type} campo
- * @returns {void}
+ * Restaurar el valor original de la Lista Multiple Materialize. Esta función es referida 
+ * por el método {@link jQuery.fn.restoreform.restore restore} del Plugin. 
+ * @param {HTMLElement} campo
  */
 function restore_lista_multiple(campo) {
     $(`#${campo.id}`).val($(`#${campo.id}`).attr("data-original-value").split(','));
@@ -82,57 +82,4 @@ $(document).ready(function () {
             }
         });
     });
-
-    // $('#texto').change(function(){
-    //     const hayCambios = formulario.hasChanges(); 
-    //     if (true == hayCambios &&  confirm('El valor ha cambiado ... ¿desea regresarlo al valor original?')) {
-    //         let cambios = formulario.getChanges(); 
-    //         console.log( {'Cambios': cambios });             
-    //         formulario.restore(this); 
-    //     }else{
-    //         formulario.setData(this); 
-    //     }
-    // }); 
-
-    // ... 
-    // $('#lista').change(function(){
-    //     let cambios = formulario.getChanges();         
-    //     if (cambios.length > 0 &&  confirm('El valor ha cambiado ... ¿desea regresarlo al valor original?')) {
-    //         console.log( {'Cambios': cambios });    
-    //         formulario.restore(this); 
-    //     }else{
-    //         formulario.setData(this); 
-    //     }
-    // }); 
-
-    // // ... 
-    // $('#textoarea').change(function(){
-    //     let cambios = formulario.getChanges(); 
-    //     if (cambios.length > 0 && confirm('El valor ha cambiado ... ¿desea regresarlo al valor original?')) {
-    //         formulario.restore(this); 
-    //     }else{
-    //         formulario.setData(this); 
-    //     }
-    // }); 
-
-    // // ... 
-    // $('#check_alfa').click(function(){
-    //     let cambios = formulario.isChanged(this); 
-    //     if (cambios.length > 0 && confirm('El valor ha cambiado ... ¿desea regresarlo al valor original?')) {
-    //         formulario.restore(this); 
-    //     }else{
-    //         formulario.setData(this); 
-    //     }
-    // }); 
-
-    // // ... 
-    // $('[name="radio"]').change(function(){
-    //     let cambios = formulario.getChanges(); 
-    //     if (cambios.length > 0 && confirm('El valor ha cambiado ... ¿desea regresarlo al valor original?')) {
-    //         formulario.restore(this); 
-    //     }else{
-    //         formulario.setData(this); 
-    //     }
-    // }); 
-
 });

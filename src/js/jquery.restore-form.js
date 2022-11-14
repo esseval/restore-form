@@ -10,6 +10,22 @@
  *
  */
 
+/**
+ * @name jQuery
+ * @class
+ * See the jQuery Library  ({@link https://jquery.com/}) for full details.  This just
+ * documents the function and classes that are added to jQuery by this plug-in.
+ */
+
+/**
+ * @name fn
+ * @class
+ * See the jQuery Library  ({@link https://jquery.com/}) for full details.  This just
+ * documents the function and classes that are added to jQuery by this plug-in. 
+ * @see {@link https://learn.jquery.com/plugins/ The jQuery Plugin Guide}
+ * @memberOf jQuery
+ */
+
  ; (function ($) {
 
     /**
@@ -39,24 +55,41 @@
      */
 
     /**
+     * @typedef MetaDataHTMLElement
+     * @type {Object}
+     * @property {Number} id    ID del elemento 
+     * @property {String} name  Nombre del elemento 
+     * @property {String} tipo  Tipo del elemento
+     * @property {String} texto Texto que identifica al elemento 
+     */
+
+    /**
+     * @typedef Options
+     * @type {Object}
+     * @property {String} class Class of the form elements that will be restored
+     * @property {Array} elements   List of form elements that will be restored. This option overrides the class option
+     * @property {Array} onRestore  List of custom restoration callback functions
+     * @property {Array} onSelect   List of custom selection callback functions
+     * @property {Array} onChange   List of custom callback functions to handle change events
+     */    
+
+    /**
      * Obtener los elementos sobre los que vamos a trabajar 
      * @param {HTMLElement} parent Elemento HTML a partir del cual vamos a buscar cosas 
+     * @private
+     * @memberOf jQuery.fn
      * @returns {Array}
      */
     function getElements(parent) {
-
-        // if (jQuery.isEmptyObject(options.elements)) {
-        //     //return getElements(this, options).toArray(); 
-        //     const elementos = $(parent).find(`input${options.class}, select${options.class}, textarea${options.class}`);
-        //     options.elements = elementos.toArray(); 
-        // }
         return $(parent).find($.restoreformOptions.elements.join(',')).toArray(); 
     }
 
     /**
      * Ejecutamos una funcion registrada en el contexto a traves de su nombre 
      * @param {String} nombreCampo ID del campo sobre el que se va a ejecutar la funcion 
-     * @param {object} contexto Objeto contenedor de todas las funciones habilitadas
+     * @param {Object} contexto Objeto contenedor de todas las funciones habilitadas
+     * @private
+     * @memberOf jQuery.fn
      * @returns {unresolved}
      */
     function perform(nombreCampo, contexto) {
@@ -70,6 +103,8 @@
     /**
      * Comprobar si el elemento ha cambiado 
      * @param {HTMLElement} elemento Elemento DOM que vamos a analizar con algunas magias
+     * @private
+     * @memberOf jQuery.fn
      * @returns {Boolean}
      */
     function isChanged(elemento) {
@@ -77,17 +112,10 @@
     }
 
     /**
-     * @typedef MetaDataHTMLElement
-     * @type {object}
-     * @property {Number} id    ID del elemento 
-     * @property {String} name  Nombre del elemento 
-     * @property {String} tipo  Tipo del elemento
-     * @property {String} texto Texto que identifica al elemento 
-     */
-
-    /**
      * Obtener toda la información que queremos del elemento
      * @param {HTMLElement} elemento Elemento DOM que vamos a analizar con algunas magias
+     * @private
+     * @memberOf jQuery.fn
      * @returns {MetaDataHTMLElement}
      */
     function getMetaData(elemento) {
@@ -104,6 +132,8 @@
     /**
      * Obtener Titulo asociado al campo 
      * @param {HTMLElement} elemento Elemento DOM que vamos a analizar con algunas magias
+     * @private
+     * @memberOf jQuery.fn
      * @returns {String}
      */
     function getTitle(elemento) {
@@ -113,6 +143,8 @@
     /**
      * Obtener el Tipo del elemento
      * @param {HTMLElement} elemento Elemento DOM que vamos a analizar con algunas magias
+     * @private
+     * @memberOf jQuery.fn
      * @returns {String}
      */
     function getType(elemento) {
@@ -122,6 +154,8 @@
     /**
      * Obtener el Tag del elemento
      * @param {HTMLElement} elemento Elemento DOM que vamos a analizar con algunas magias
+     * @private
+     * @memberOf jQuery.fn
      * @returns {String}
      */
     function getTag(elemento) {
@@ -131,6 +165,8 @@
     /**
      * Obtener el Valor del elemento
      * @param {HTMLElement} elemento Elemento DOM que vamos a analizar con algunas magias
+     * @private
+     * @memberOf jQuery.fn
      * @returns {String}
      */
     function getValue(elemento) {
@@ -158,12 +194,25 @@
         return $(`#${elemento.id}`).val();
     }
 
+    /**
+     * jquery.restore-form.js - jQuery plugin to restore the original values of form's fields. 
+     * @class
+     * @name restoreform
+     * @memberOf jQuery.fn
+     */
     $.fn.restoreform = function (options) {
 
-        // ... 
+        /**
+         * @type {jQuery}
+         * @memberof jQuery.fn.restoreform
+         */
         var element = this;
 
-        // Option defaults
+        /**
+         * Option defaults
+         * @type {Options}
+         * @memberof jQuery.fn.restoreform
+         */
         options = $.extend({
             class: this.attr('class') || '.restore',
             elements: this.attr('elements') || {},
@@ -177,30 +226,29 @@
             options.elements = [`input${options.class}`, `select${options.class}`, `textarea${options.class}`]; 
         }
 
-        // Store these options so they'll be available to the other functions
+        /**
+         * Store these options so they'll be available to the other functions
+         * @type {Options}
+         */
         $.restoreformOptions = options;
 
         /**
          * Obtener los campos 
+         * @function elements
          * @public
+         * @memberOf jQuery.fn.restoreform
          * @returns {Array}
          */
         this.elements = function () {
-            /**
-             * Sino indicamos el elemento a restaurar ... entonces restauramos el 
-             * valor de todos los elementos
-             */
-            // if (jQuery.isEmptyObject(options.elements)) {
-            //     return getElements(this, options).toArray();
-            // }
-
             // return options.elements;
             return getElements(this);
         }
 
         /**
          * Obtener los campos que han cambiado su valor
+         * @function changes 
          * @public 
+         * @memberOf jQuery.fn.restoreform
          * @returns {Array}
          */
         this.changes = function () {
@@ -212,7 +260,9 @@
 
         /**
          * Restaurar el valor de un elemento o de todos los elementos dentro de un contenedor
+         * @function restore
          * @public
+         * @memberOf jQuery.fn.restoreform
          * @param {HTMLElement} [elemento] Elemento DOM que vamos a analizar con algunas magias
          * @returns {unresolved}
          */
@@ -244,7 +294,9 @@
 
         /**
          * Comprobar si hay cambios en el elemento o de todo el contenedor
+         * @function isChanged
          * @public
+         * @memberOf jQuery.fn.restoreform
          * @param {HTMLElement} [elemento] Elemento DOM que vamos a analizar con algunas magias
          * @returns {Boolean}
          */
@@ -262,7 +314,9 @@
 
         /**
          * Comprobar si hay cambios 
+         * @function hasChanges
          * @public
+         * @memberOf jQuery.fn.restoreform
          * @returns {Boolean} 
          */
         this.hasChanges = function () {
@@ -271,13 +325,17 @@
         }
 
         /**
+         * @function getChanges
          * @public
+         * @memberOf jQuery.fn.restoreform
          * @alias changes
          */
         this.getChanges = this.changes;
 
         /**
          * Definir el valor de un elemento
+         * @function setValue 
+         * @memberOf jQuery.fn.restoreform
          * @param {HTMLElement} elemento Elemento DOM que vamos a analizar con algunas magias
          * @returns {restoreform}
          */
@@ -304,7 +362,9 @@
 
 
         /**
+         * @function setData 
          * @public
+         * @memberOf jQuery.fn.restoreform
          * @alias setValue
          */
         this.setData = this.setValue;

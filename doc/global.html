@@ -94,126 +94,6 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
-
-        
-            
-<h4 class="name" id="changes"><span class="type-signature"></span>changes<span class="type-signature"></span></h4>
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.restore-form.js.html">jquery.restore-form.js</a>, <a href="jquery.restore-form.js.html#line277">line 277</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="setValue"><span class="type-signature"></span>setValue<span class="type-signature"></span></h4>
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.restore-form.js.html">jquery.restore-form.js</a>, <a href="jquery.restore-form.js.html#line310">line 310</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -485,7 +365,7 @@
     
 
     
-    <h4 class="name" id="restore_lista"><span class="type-signature"></span>restore_lista<span class="signature">(campo)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id="restore_lista"><span class="type-signature"></span>restore_lista<span class="signature">(campo)</span><span class="type-signature"></span></h4>
     
 
     
@@ -493,7 +373,8 @@
 
 
 <div class="description">
-    Restaurar el valor original de la Lista Materialize
+    Restaurar el valor original de la Lista Materialize Esta función es referida 
+por el método <a href="jQuery.fn.restoreform.html#.restore">restore</a> del Plugin.
 </div>
 
 
@@ -535,7 +416,7 @@
             <td class="type">
             
                 
-<span class="param-type">type</span>
+<span class="param-type">HTMLElement</span>
 
 
             
@@ -611,24 +492,6 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">void</span>
-
-
-    </dd>
-</dl>
-
-    
 
 
 
@@ -640,7 +503,7 @@
     
 
     
-    <h4 class="name" id="restore_lista_multiple"><span class="type-signature"></span>restore_lista_multiple<span class="signature">(campo)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id="restore_lista_multiple"><span class="type-signature"></span>restore_lista_multiple<span class="signature">(campo)</span><span class="type-signature"></span></h4>
     
 
     
@@ -648,7 +511,8 @@
 
 
 <div class="description">
-    Restaurar el valor original de la Lista Multiple Materialize
+    Restaurar el valor original de la Lista Multiple Materialize. Esta función es referida 
+por el método <a href="jQuery.fn.restoreform.html#.restore">restore</a> del Plugin.
 </div>
 
 
@@ -690,7 +554,7 @@
             <td class="type">
             
                 
-<span class="param-type">type</span>
+<span class="param-type">HTMLElement</span>
 
 
             
@@ -766,24 +630,6 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">void</span>
-
-
-    </dd>
-</dl>
-
-    
 
 
 
@@ -808,7 +654,7 @@
     <ul>
         <li>
             
-<span class="param-type">object</span>
+<span class="param-type">Object</span>
 
 
         </li>
@@ -968,7 +814,219 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.restore-form.js.html">jquery.restore-form.js</a>, <a href="jquery.restore-form.js.html#line79">line 79</a>
+        <a href="jquery.restore-form.js.html">jquery.restore-form.js</a>, <a href="jquery.restore-form.js.html#line57">line 57</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="Options">Options</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>class</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Class of the form elements that will be restored</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>elements</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">List of form elements that will be restored. This option overrides the class option</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onRestore</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">List of custom restoration callback functions</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onSelect</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">List of custom selection callback functions</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onChange</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">List of custom callback functions to handle change events</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="jquery.restore-form.js.html">jquery.restore-form.js</a>, <a href="jquery.restore-form.js.html#line66">line 66</a>
     </li></ul></dd>
     
 
@@ -998,13 +1056,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#bootSelect">bootSelect</a></li><li><a href="global.html#changes">changes</a></li><li><a href="global.html#refreshSelect">refreshSelect</a></li><li><a href="global.html#restore_lista">restore_lista</a></li><li><a href="global.html#restore_lista_multiple">restore_lista_multiple</a></li><li><a href="global.html#setValue">setValue</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="jQuery.html">jQuery</a></li><li><a href="jQuery.fn.html">fn</a></li><li><a href="jQuery.fn.restoreform.html">restoreform</a></li></ul><h3>Global</h3><ul><li><a href="global.html#bootSelect">bootSelect</a></li><li><a href="global.html#refreshSelect">refreshSelect</a></li><li><a href="global.html#restore_lista">restore_lista</a></li><li><a href="global.html#restore_lista_multiple">restore_lista_multiple</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Thu Oct 13 2022 17:42:54 GMT+0200 (GMT+02:00)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Mon Nov 14 2022 14:17:03 GMT+0100 (GMT+01:00)
 </footer>
 
 <script> prettyPrint(); </script>

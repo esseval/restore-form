@@ -4,7 +4,7 @@ jquery.restoreform.min.js
 A jQuery plugin to restore the original values of form's fields. 
 
 ## Usage
-Step 1: include JQuery and translate.js in your page
+Step 1: include JQuery and jquery.restore-form.js in your page
 
     <script src="jquery.js"/>
     <script src="jquery.restore-form.min.js"></script>
@@ -51,4 +51,4 @@ Step 4: restore elements
     formulario.restore(elemento); 
 
 ## License
-You may use translate.js under the terms of the MIT License. [More information](http://en.wikipedia.org/wiki/MIT_License).
+You may use jquery.restore-form.min.js under the terms of the MIT License. [More information](http://en.wikipedia.org/wiki/MIT_License).
